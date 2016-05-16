@@ -46,7 +46,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-0' class='srclink' href='../src/multimap/lib.rs.html#1-741' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-0' class='srclink' href='../src/multimap/src/lib.rs.html#9-1095' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p>A MultiMap implementation which is just a wrapper around std::collections::HashMap.
 See HashMap&#39;s documentation for more details.</p>
 
@@ -56,7 +56,8 @@ and some methods are new (doesn&#39;t have an equivalent in HashMap.)</p>
 <p>The MultiMap is generic for the key (K) and the value (V). Internally the values are
 stored in a generic Vector.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>multimap</span>::<span class='ident'>MultiMap</span>;
 
 <span class='comment'>// create a new MultiMap. An explicit type signature can be omitted because of the</span>
@@ -115,7 +116,6 @@ stored in a generic Vector.</p>
                                title='multimap::IterAll'>IterAll</a></td>
                         <td class='docblock short'>
                              <p>HashMap iterator.</p>
-
                         </td>
                     </tr>
                 
@@ -124,7 +124,6 @@ stored in a generic Vector.</p>
                                title='multimap::IterAllMut'>IterAllMut</a></td>
                         <td class='docblock short'>
                              <p>HashMap mutable values iterator.</p>
-
                         </td>
                     </tr>
                 
@@ -141,6 +140,31 @@ stored in a generic Vector.</p>
                                title='multimap::MultiMap'>MultiMap</a></td>
                         <td class='docblock short'>
                              
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.OccupiedEntry.html'
+                               title='multimap::OccupiedEntry'>OccupiedEntry</a></td>
+                        <td class='docblock short'>
+                             <p>A view into a single occupied location in a MultiMap.</p>
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.VacantEntry.html'
+                               title='multimap::VacantEntry'>VacantEntry</a></td>
+                        <td class='docblock short'>
+                             <p>A view into a single empty location in a MultiMap.</p>
+                        </td>
+                    </tr>
+                </table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='enum' href='enum.Entry.html'
+                               title='multimap::Entry'>Entry</a></td>
+                        <td class='docblock short'>
+                             <p>A view into a single location in a map, which may be vacant or occupied.</p>
                         </td>
                     </tr>
                 </table><h2 id='impls' class='section-header'><a href="#impls">Implementations</a></h2>
@@ -187,7 +211,7 @@ stored in a generic Vector.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

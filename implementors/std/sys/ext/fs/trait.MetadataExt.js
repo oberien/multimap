@@ -1,5 +1,5 @@
 (function() {var implementors = {};
-implementors['multimap'] = [];
+implementors['multimap'] = [];implementors['multimap'] = [];
 
             if (window.register_implementors) {
                 window.register_implementors(implementors);
