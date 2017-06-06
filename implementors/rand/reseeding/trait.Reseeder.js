@@ -1,5 +1,6 @@
 (function() {var implementors = {};
-implementors['multimap'] = ["impl <a class='trait' href='https://doc.rust-lang.org/nightly/rand/reseeding/trait.Reseeder.html' title='rand::reseeding::Reseeder'>Reseeder</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/rand/struct.StdRng.html' title='std::rand::StdRng'>StdRng</a>&gt; for <a class='struct' href='https://doc.rust-lang.org/nightly/std/rand/struct.ThreadRngReseeder.html' title='std::rand::ThreadRngReseeder'>ThreadRngReseeder</a>",];implementors['multimap'] = ["impl <a class='trait' href='https://doc.rust-lang.org/nightly/rand/reseeding/trait.Reseeder.html' title='rand::reseeding::Reseeder'>Reseeder</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/rand/struct.StdRng.html' title='std::rand::StdRng'>StdRng</a>&gt; for <a class='struct' href='https://doc.rust-lang.org/nightly/std/rand/struct.ThreadRngReseeder.html' title='std::rand::ThreadRngReseeder'>ThreadRngReseeder</a>",];
+implementors["multimap"] = [];
+implementors["serde"] = [];
 
             if (window.register_implementors) {
                 window.register_implementors(implementors);

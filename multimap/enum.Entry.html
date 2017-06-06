@@ -9,13 +9,15 @@
 
     <title>multimap::Entry - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
     <link rel="stylesheet" type="text/css" href="../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
+    
 
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc enum">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -41,24 +43,25 @@
         </form>
     </nav>
 
-    <section id='main' class="content enum">
-<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>multimap</a>::<wbr><a class='enum' href=''>Entry</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-28' class='srclink' href='../src/multimap/src/entry.rs.html#25-31' title='goto source code'>[src]</a></span></h1>
-<pre class='rust enum'>pub enum Entry&lt;'a, K: 'a, V: 'a&gt; {
-    Occupied(<a class='struct' href='../multimap/struct.OccupiedEntry.html' title='multimap::OccupiedEntry'>OccupiedEntry</a>&lt;'a, K, V&gt;),
-    Vacant(<a class='struct' href='../multimap/struct.VacantEntry.html' title='multimap::VacantEntry'>VacantEntry</a>&lt;'a, K, V&gt;),
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>multimap</a>::<wbr><a class="enum" href=''>Entry</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/multimap/entry.rs.html#25-31' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Entry&lt;'a, K:&nbsp;'a, V:&nbsp;'a&gt; {
+    Occupied(<a class="struct" href="../multimap/struct.OccupiedEntry.html" title="struct multimap::OccupiedEntry">OccupiedEntry</a>&lt;'a, K, V&gt;),
+    Vacant(<a class="struct" href="../multimap/struct.VacantEntry.html" title="struct multimap::VacantEntry">VacantEntry</a>&lt;'a, K, V&gt;),
 }</pre><div class='docblock'><p>A view into a single location in a map, which may be vacant or occupied.</p>
 </div><h2 class='variants'>Variants</h2>
-<table class='variants_table'><tr><td id='variant.Occupied'><code>Occupied</code></td><td><div class='docblock'><p>An occupied Entry.</p>
-</div></td><td></td></tr><tr><td id='variant.Vacant'><code>Vacant</code></td><td><div class='docblock'><p>A vacant Entry.</p>
-</div></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a, K: 'a, V: 'a&gt; <a class='enum' href='../multimap/enum.Entry.html' title='multimap::Entry'>Entry</a>&lt;'a, K, V&gt;</code></h3><div class='impl-items'><h4 id='method.or_insert' class='method'><code>fn <a href='#method.or_insert' class='fnname'>or_insert</a>(self, default: V) -&gt; &amp;'a mut V</code></h4>
+<span id='variant.Occupied' class='variant'><span id='Occupied.v' class='invisible'><code>Occupied(<a class="struct" href="../multimap/struct.OccupiedEntry.html" title="struct multimap::OccupiedEntry">OccupiedEntry</a>&lt;'a, K, V&gt;)</code></span></span><div class='docblock'><p>An occupied Entry.</p>
+</div><span id='variant.Vacant' class='variant'><span id='Vacant.v' class='invisible'><code>Vacant(<a class="struct" href="../multimap/struct.VacantEntry.html" title="struct multimap::VacantEntry">VacantEntry</a>&lt;'a, K, V&gt;)</code></span></span><div class='docblock'><p>A vacant Entry.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a, K:&nbsp;'a, V:&nbsp;'a&gt; <a class="enum" href="../multimap/enum.Entry.html" title="enum multimap::Entry">Entry</a>&lt;'a, K, V&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/multimap/entry.rs.html#97-117' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.or_insert' class="method"><span id='or_insert.v' class='invisible'><code>fn <a href='#method.or_insert' class='fnname'>or_insert</a>(self, default: V) -&gt; &amp;'a mut V</code></span></h4>
 <div class='docblock'><p>Ensures a value is in the entry by inserting the default if empty, and returns
 a mutable reference to the value in the entry. This will return a mutable reference to the
 first value in the vector corresponding to the specified key.</p>
-</div><h4 id='method.or_insert_vec' class='method'><code>fn <a href='#method.or_insert_vec' class='fnname'>or_insert_vec</a>(self, defaults: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;V&gt;) -&gt; &amp;'a mut <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;V&gt;</code></h4>
+</div><h4 id='method.or_insert_vec' class="method"><span id='or_insert_vec.v' class='invisible'><code>fn <a href='#method.or_insert_vec' class='fnname'>or_insert_vec</a>(self, defaults: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;V&gt;) -&gt; &amp;'a mut <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;V&gt;</code></span></h4>
 <div class='docblock'><p>Ensures a value is in the entry by inserting the default values if empty, and returns
 a mutable reference to the values (the corresponding vector to the specified key) in
 the entry.</p>
@@ -85,6 +88,8 @@ the entry.</p>
                     <dd>Move down in search results</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
 
@@ -116,11 +121,9 @@ the entry.</p>
     <script>
         window.rootPath = "../";
         window.currentCrate = "multimap";
-        window.playgroundUrl = "";
     </script>
     <script src="../jquery.js"></script>
     <script src="../main.js"></script>
-    
     <script defer src="../search-index.js"></script>
 </body>
 </html>
