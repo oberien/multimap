@@ -11,7 +11,6 @@
 extern crate serde;
 
 use std::fmt;
-use std::hash::Hash;
 use std::marker::PhantomData;
 
 use self::serde::{Deserialize, Deserializer, Serialize, Serializer};
@@ -21,7 +20,7 @@ use MultiMap;
 
 
 impl<K, V> Serialize for MultiMap<K, V>
-    where K: Serialize + Eq + Hash,
+    where K: Serialize + Ord,
           V: Serialize
 {
     fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
@@ -32,7 +31,7 @@ impl<K, V> Serialize for MultiMap<K, V>
 }
 
 impl<K, V> MultiMapVisitor<K, V>
-    where K: Hash + Eq
+    where K: Ord
 {
     fn new() -> Self {
         MultiMapVisitor {
@@ -46,7 +45,7 @@ struct MultiMapVisitor<K, V> {
 }
 
 impl<'a, K, V> Visitor<'a> for MultiMapVisitor<K, V>
-    where K: Deserialize<'a> + Eq + Hash,
+    where K: Deserialize<'a> + Ord,
           V: Deserialize<'a>
 {
     type Value = MultiMap<K, V>;
@@ -58,7 +57,7 @@ impl<'a, K, V> Visitor<'a> for MultiMapVisitor<K, V>
     fn visit_map<M>(self, mut visitor: M) -> Result<Self::Value, M::Error>
         where M: MapAccess<'a>
     {
-        let mut values = MultiMap::with_capacity(visitor.size_hint().unwrap_or(0));
+        let mut values = MultiMap::new();
 
         while let Some((key, value)) = visitor.next_entry()? {
             values.inner.insert(key, value);
@@ -68,8 +67,8 @@ impl<'a, K, V> Visitor<'a> for MultiMapVisitor<K, V>
     }
 }
 
-impl<'a, K, V> Deserialize<'a> for MultiMap<K, V>
-    where K: Deserialize<'a> + Eq + Hash,
+impl<'a, K: Ord, V> Deserialize<'a> for MultiMap<K, V>
+    where K: Deserialize<'a> + Ord,
           V: Deserialize<'a>
 {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
